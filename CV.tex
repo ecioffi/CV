@@ -1,0 +1,121 @@
+\newcommand{\datemod}{15 March 2018}
+
+\documentclass[11pt, letterpaper]{article}
+\usepackage[NoDate]{currvita} % no date because currvita only prints at bottom, and I want at top
+\usepackage{enumitem}
+\usepackage[margin=1.2in, tmargin=.90in, bmargin=.90in]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage[colorlinks, urlcolor=purple]{hyperref}
+\usepackage{url}
+
+\urlstyle{same} % for email to show up right
+\tolerance=600 % how much bad word spacing in each line is tolerated
+
+% load ArnoPro reg and bold variants as unified font
+\setmainfont{ArnoPro}[
+Extension = .otf,
+UprightFont = *-Regular,
+BoldFont = *-Bold]
+\newfontface\conds{ArnoPro-Display.otf} % define \conds as new font
+\renewcommand*{\cvlabelfont}{\conds} % set labels in condensed "display" font
+\renewcommand*{\cvheadingfont}{\LARGE\bfseries} % LARGE heading
+\newcommand{\compactspacing}{\setlength{\itemsep}{-0.35em}} % reduce space between resume items
+
+\newcommand{\describe}[1] {
+    \begin{itemize}[label=---, topsep=-0.5em, itemindent=0em, labelsep=0.5em, leftmargin=2em]
+    \small
+    \item#1
+    \end{itemize}
+}
+
+\begin{document}
+\thispagestyle{empty} % no page # on first page
+
+\begin{cv}{\color{blue}{Eric A. Cioffi}} % pink is cool
+\setlength{\cvlabelskip}{0.75em} % space under my name
+\cvplace{} % empty place because currvita only prints at bottom, and I want at top
+\noindent Los Angeles, \datemod
+
+% set label column width to that of longest label
+\settowidth{\cvlabelwidth} {\cvlabelfont Nov 2016 – May 2016} 
+%\settowidth{\cvlabelwidth}{\cvlabelfont Independent Learning}
+\begin{cvlist}{Contact}
+    \item \href{mailto:ecioffi@usc.edu}{\nolinkurl{ecioffi@usc.edu}}
+    $\mid$ 240-437-8592
+\end{cvlist}
+
+\begin{cvlist}{Education}
+    \compactspacing
+    
+    \item[Aug 2017 – Present] University of Southern California, Viterbi School of Engineering:
+    B.S. in Electrical Engineering, Minor in Physics, projected May 2020 --- 3.2 GPA
+    \item[Sep 2016 – Jun 2017] University of California, Santa Cruz, Jack Baskin School of Engineering --- 3.8 GPA
+    \item[Aug 2012 – May 2016] Albert Einstein High School, Kensington, Maryland
+\end{cvlist}
+
+\begin{cvlist}{Experience}
+    \compactspacing
+
+    \item[Oct 2017 – Present] Member, USC Formula SAE Racing Team, Chassis Division
+    \describe{Using NX11 CAD, helped design movable pedal box to allow comfortable vehicle operation by drivers of different heights.}
+    
+    \item[Nov 2016 – Jun 2017] Volunteer, UC Santa Cruz Bike Coop
+    \describe{Instructed and assisted clients; did everything from maintenance to extensive repairs.}
+    
+    \item[Jul 2014 – Aug 2014] Staff Assistant, TIC Summer Camp, Bethesda, Maryland
+    \describe{Tutored children to facilitate their creation of games in Logo and Java.}
+    
+    \item[May 2014 – Jul 2014] Wilderness Program, Grand Staircase-Escalante National Monument, Utah
+    \describe{Cultivated self-reliance absent modern technology, e.g., lit fires with self-made bow drill.}
+\end{cvlist}
+
+\settowidth{\cvlabelwidth}{\cvlabelfont 2012} %set label column width
+\begin{cvlist}{Selected Projects \normalfont(\url{https://github.com/ecioffi})}
+    \compactspacing
+    
+    \item[2017] VHF/UHF Antenna
+    \describe{Designed and built frame to house antenna elements in position and to stand in attic. Used frequency-optimized antenna design that receives 8VSB modulated signals from 45 miles away.}
+    
+    \item[2017] Custom Bicycle Wheel
+    \describe{Utilizing offset-drilled rim and modified hub, designed and built wheel to fit 11-speed cogset in 7-speed dropout spacing.}
+    
+    \item[2014] 2048 AI
+    \describe{Using brute-force expectimax with minimalist evaluation function, AI wins fad phone game every play.}
+    
+    \item[2012] Square Root Algorithm
+    \describe{Developed and tested algorithm that calculates square roots with only addition and bitwise operations.}
+\end{cvlist}
+\renewcommand*{\cvlistheadingfont}{\large\bfseries}
+
+\begin{cvlist}{Honors}
+    \compactspacing
+    
+    \item[2017] University of California, Santa Cruz Dean's List, Winter and Spring Quarters.
+    \item[2016] Albert Einstein High School Mathematics Award, given to single Senior selected by department head.
+    %of the ${\sim}$370 students
+\end{cvlist}
+
+\setlength{\cvlabelsep}{2em}
+\settowidth{\cvlabelwidth}{\cvlabelfont Independent Learning} %set label column width
+\begin{cvlist}{Skills}
+    \compactspacing
+    
+    \item[Languages] C\textbackslash C++, java, python, Bash, \LaTeX, English, Japanese
+    \item[Notable Coursework] Internet of Things; Computer Systems and Assembly Language
+    
+    \setlength{\itemsep}{-0.25em} % slightly more space than usual before the list because it starts higher than a regular line would for some reason
+    \item[Independent Learning]
+    \begin{itemize}[topsep=-0.5em, itemindent=0em, labelsep=0.5em, leftmargin=1em, itemsep=0em]
+        \small
+        \item Self-study of math and C++ enabled skipping AP Calculus AB in high school and testing out of EE155, Introduction to Computer Programming, at USC.
+        \item Started in bicycle work by disassembling, reassembling old bike.
+	    \item Learned automotive repair from Internet and factory service manual for 1992 Maxima.
+    \end{itemize}
+    
+    %\item[Miscellaneous:] Can drive manual transmissions
+\end{cvlist}
+
+\end{cv}
+\end{document}
+\endinput
